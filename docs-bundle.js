@@ -21,5 +21,6 @@ stealTools.build({
     bundleSteal: false,
     bundleAssets: true,
     sourceMaps: true,
+    minify: false,
     dest: 'docs/spectre'
 });

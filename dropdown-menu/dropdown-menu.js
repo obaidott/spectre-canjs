@@ -39,7 +39,10 @@ export const ViewModel = DefineMap.extend('DropdownMenu', {
      * @property {Boolean} dropdown-menu.ViewModel.visible visible
      * @parent dropdown-menu.ViewModel.props
      */
-    visible: 'boolean',
+    visible: {
+        type: 'boolean',
+        value: true
+    },
     /**
      * The button class to apply to the button dropdown. The default is `btn btn-link`
      * @property {String} dropdown-menu.ViewModel.props.buttonClass
@@ -72,6 +75,8 @@ export const ViewModel = DefineMap.extend('DropdownMenu', {
      * @return {Boolean} always returns false to prevent page navigation from occuring
      */
     toggle (ev, val) {
+        console.log("toggle called");
+        debugger;
         if (ev) {
             ev.preventDefault();
         }
@@ -122,5 +127,12 @@ assign(ViewModel.prototype, canEvent);
 export default Component.extend({
     tag: 'dropdown-menu',
     view: template,
-    viewModel: ViewModel
+    viewModel: ViewModel,
+    events: {
+        inserted () {
+            console.log("inserted");
+            debugger;
+            console.log(this.element);
+        }
+    }
 });

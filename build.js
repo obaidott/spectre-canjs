@@ -18,6 +18,10 @@ stealTools.export({
         },
         '+global-css': {}
     }
+}, {
+    "minify": {
+        minify: false
+    }
 }).catch(function (e) {
 
     setTimeout(function () {
